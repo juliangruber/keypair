@@ -1,7 +1,7 @@
 
 # keypair
 
-Get a RSA PEM key pair from pure JS
+Generate a RSA PEM key pair from pure JS
 
 [![Build Status](https://travis-ci.org/juliangruber/keypair.png?branch=master)](https://travis-ci.org/juliangruber/keypair)
 

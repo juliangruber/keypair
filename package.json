@@ -1,6 +1,6 @@
 {
   "name": "keypair",
-  "description": "Get a RSA PEM key pair from pure JS",
+  "description": "Generate a RSA PEM key pair from pure JS",
   "version": "0.0.3",
   "repository": {
     "type": "git",
