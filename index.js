@@ -4441,8 +4441,12 @@ pki.privateKeyToPem = function(key, maxline) {
 module.exports = function (opts) {
   var keypair = forge.rsa.generateKeyPair(opts);
   keypair = {
-    public: forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72) + '\n',
-    private: forge.pki.privateKeyToPem(keypair.privateKey, 72) + '\n'
+    public: fix(forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72)),
+    private: fix(forge.pki.privateKeyToPem(keypair.privateKey, 72))
   };
   return keypair;
 };
+
+function fix (str) {
+  return str.replace(/\n\r/g, '\n') + '\n'
+}
