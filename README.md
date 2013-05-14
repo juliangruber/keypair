@@ -3,6 +3,8 @@
 
 Generate a RSA PEM key pair from pure JS
 
+[![browser support](https://ci.testling.com/juliangruber/keypair.png)](https://ci.testling.com/juliangruber/keypair)
+
 [![Build Status](https://travis-ci.org/juliangruber/keypair.png?branch=master)](https://travis-ci.org/juliangruber/keypair)
 
 ## Usage
