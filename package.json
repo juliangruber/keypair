@@ -1,0 +1,34 @@
+{
+  "name": "pem",
+  "description": "rsa-keypair",
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/juliangruber/pem.git"
+  },
+  "homepage": "https://github.com/juliangruber/pem",
+  "main": "Get a RSA key pair from pure JS",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~1.0.2"
+  },
+  "keywords": [
+    "rsa",
+    "keypair",
+    "keys",
+    "encryption",
+    "public",
+    "private",
+    "key",
+    "ssh"
+  ],
+  "author": {
+    "name": "Julian Gruber",
+    "email": "mail@juliangruber.com",
+    "url": "http://juliangruber.com"
+  },
+  "license": "BSD"
+}
