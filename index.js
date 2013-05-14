@@ -4074,7 +4074,7 @@ function _generateKeyPair(state, options, callback) {
   }
 
   // web workers unavailable, use setImmediate
-  if(typeof(Worker) === 'undefined') {
+  if(false || typeof(Worker) === 'undefined') {
     function step() {
       // 10 ms gives 5ms of leeway for other calculations before dropping
       // below 60fps (1000/60 == 16.67), but in reality, the number will

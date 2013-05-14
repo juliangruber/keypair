@@ -39,6 +39,12 @@ With [npm](http://npmjs.org) do
 $ npm install keypair
 ```
 
+## Kudos
+
+To [digitalbazaar](https://github.com/digitalbazaar) for their
+[forge](https://github.com/digitalbazaar/forge) project, this library is merely a
+wrapper around some of forge's functions.
+
 ## License
 
 BSD
