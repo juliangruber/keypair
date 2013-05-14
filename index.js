@@ -4448,5 +4448,5 @@ module.exports = function (opts) {
 };
 
 function fix (str) {
-  return str.replace(/\n\r/g, '\n') + '\n'
+  return str.replace(/\r/g, '') + '\n'
 }
