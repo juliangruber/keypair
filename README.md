@@ -1,4 +1,3 @@
-
 # keypair
 
 Generate a RSA PEM key pair from pure JS
@@ -32,8 +31,8 @@ Get an RSA PEM key pair.
 
 `opts` can be
 
-* `bits`: the size for the private key in bits (**Default: 1024**)
-* `e`: the public exponent to use (**Default: 65537**)
+* `bits`: the size for the private key in bits. Default: **1024**.
+* `e`: the public exponent to use. Default: **65537**.
 
 ## Installation
 
