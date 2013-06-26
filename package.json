@@ -1,12 +1,12 @@
 {
   "name": "keypair",
   "description": "Generate a RSA PEM key pair from pure JS",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": {
     "type": "git",
     "url": "git://github.com/juliangruber/keypair.git"
   },
-  "homepage": "https://github.com/juliangruber/keypare",
+  "homepage": "https://github.com/juliangruber/keypair",
   "main": "index.js",
   "scripts": {
     "test": "tape test.js"
