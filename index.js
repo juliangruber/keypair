@@ -6,6 +6,23 @@ var rsa = forge.pki.rsa = forge.rsa = {};
 var util = forge.util = {};
 
 /**
+ * Expose `keypair`.
+ */
+
+module.exports = function (opts) {
+  var keypair = forge.rsa.generateKeyPair(opts);
+  keypair = {
+    public: fix(forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72)),
+    private: fix(forge.pki.privateKeyToPem(keypair.privateKey, 72))
+  };
+  return keypair;
+};
+
+function fix (str) {
+  return str.replace(/\r/g, '') + '\n'
+}
+
+/**
  * util.fillString
  */
 
@@ -4433,20 +4450,3 @@ pki.privateKeyToPem = function(key, maxline) {
     out +
     '\r\n-----END RSA PRIVATE KEY-----');
 };
-
-/**
- * Expose `fn`.
- */
-
-module.exports = function (opts) {
-  var keypair = forge.rsa.generateKeyPair(opts);
-  keypair = {
-    public: fix(forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72)),
-    private: fix(forge.pki.privateKeyToPem(keypair.privateKey, 72))
-  };
-  return keypair;
-};
-
-function fix (str) {
-  return str.replace(/\r/g, '') + '\n'
-}
