@@ -31,7 +31,7 @@ Get an RSA PEM key pair.
 
 `opts` can be
 
-* `bits`: the size for the private key in bits. Default: **1024**.
+* `bits`: the size for the private key in bits. Default: **2048**.
 * `e`: the public exponent to use. Default: **65537**.
 
 ## Installation

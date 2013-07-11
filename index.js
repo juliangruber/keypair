@@ -10,6 +10,8 @@ var util = forge.util = {};
  */
 
 module.exports = function (opts) {
+  if (!opts) opts = {};
+  if (typeof opts.bits == 'undefined') opts.bits = 2048;
   var keypair = forge.rsa.generateKeyPair(opts);
   keypair = {
     public: fix(forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72)),
