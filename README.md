@@ -55,4 +55,4 @@ wrapper around some of forge's functions.
 
 ## License
 
-BSD
+BSD / GPL
