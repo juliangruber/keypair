@@ -2,9 +2,10 @@
 
 Generate a RSA PEM key pair from pure JS
 
-[![browser support](https://ci.testling.com/juliangruber/keypair.png)](https://ci.testling.com/juliangruber/keypair)
+[![Build Status](https://travis-ci.org/juliangruber/keypair.svg?branch=master)](https://travis-ci.org/juliangruber/keypair)
+[![downloads](https://img.shields.io/npm/dm/keypair.svg)](https://www.npmjs.org/package/keypair)
 
-[![Build Status](https://travis-ci.org/juliangruber/keypair.png?branch=master)](https://travis-ci.org/juliangruber/keypair)
+[![browser support](https://ci.testling.com/juliangruber/keypair.png)](https://ci.testling.com/juliangruber/keypair)
 
 ## Usage
 
