@@ -24,7 +24,6 @@ module.exports = function (opts, callback) {
 
   if (callback) {
     wrappedCallback = function generateKeyPairCallback(err, keypair) {
-      console.log(1);
       callback(err, fixKeypair(keypair));
     };
   }
