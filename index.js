@@ -9,19 +9,43 @@ var util = forge.util = {};
  * Expose `keypair`.
  */
 
-module.exports = function (opts) {
+module.exports = function (opts, callback) {
+  var wrappedCallback;
+
+  if (arguments.length === 1) {
+    if (typeof opts === 'function') {
+      callback = opts;
+      opts = undefined;
+    }
+  }
+
   if (!opts) opts = {};
   if (typeof opts.bits == 'undefined') opts.bits = 2048;
-  var keypair = forge.rsa.generateKeyPair(opts);
-  keypair = {
-    public: fix(forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72)),
-    private: fix(forge.pki.privateKeyToPem(keypair.privateKey, 72))
-  };
-  return keypair;
+
+  if (callback) {
+    wrappedCallback = function generateKeyPairCallback(err, keypair) {
+      console.log(1);
+      callback(err, fixKeypair(keypair));
+    };
+  }
+
+  var keypair = forge.rsa.generateKeyPair(null, null, opts, wrappedCallback);
+
+  // If we are async this will just return undefined.
+  return fixKeypair(keypair);
 };
 
 function fix (str) {
   return str.replace(/\r/g, '') + '\n'
+}
+
+function fixKeypair(keypair) {
+  if (!keypair) return;
+
+  return {
+    public: fix(forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72)),
+    private: fix(forge.pki.privateKeyToPem(keypair.privateKey, 72))
+  };
 }
 
 /**
