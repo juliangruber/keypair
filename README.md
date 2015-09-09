@@ -29,6 +29,20 @@ $ node example.js
 Performance greatly depends on the bit size of the generated private key. With 1024 bits you get a key in 0.5s-2s, with 2048 bits it takes 8s-20s, on the same machine. As this will block the event loop while generating the key,
 make sure that's ok or to spawn a child process or run it inside a webworker.
 
+## Pro Tip: authorized_keys
+
+@maxogden found out how to use this module to create entries for the `authorized_keys` file:
+
+```js
+var keypair = require('keypair');
+var forge = require('node-forge');
+
+var pair = keypair();
+var publicKey = forge.pki.publicKeyFromPem(pair.public);
+var ssh = forge.ssh.publicKeyToOpenSSH(publicKey, 'user@domain.tld');
+console.log(ssh);
+```
+
 ## API
 
 ### keypair([opts])
