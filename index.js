@@ -17,8 +17,21 @@ module.exports = function (opts) {
     public: fix(forge.pki.publicKeyToRSAPublicKeyPem(keypair.publicKey, 72)),
     private: fix(forge.pki.privateKeyToPem(keypair.privateKey, 72))
   };
+  // if requested, generate the OpenSSH authorized_keys line
+  if(opts.openSSH) {
+    keypair.openSSH = genOpenSSH(keypair.public);
+  }
   return keypair;
 };
+
+// generates an OpenSSH "authorized_keys" string from an RSA key
+function genOpenSSH(rsaKey) {
+  var lines = rsaKey.replace('\r','').split('\n');
+  // strip first line and last two lines (begin/end, plus blank line)
+  lines.splice(0,1); // remove -----BEGIN RSA PRIVATE KEY-----
+  lines.splice(lines.length-2,2); // remove -----END RSA PRIVATE KEY----- & newline
+  return 'ssh-rsa ' + lines.join('') + ' ';
+}
 
 function fix (str) {
   return str.replace(/\r/g, '') + '\n'

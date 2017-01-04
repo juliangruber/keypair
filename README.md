@@ -53,6 +53,7 @@ Get an RSA PEM key pair.
 
 * `bits`: the size for the private key in bits. Default: **2048**.
 * `e`: the public exponent to use. Default: **65537**.
+* `openSSH`: an additional property called `openSSH` will be generated which allows you to add the generated public key to `authorized_keys`
 
 ## Installation
 
