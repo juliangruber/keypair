@@ -17,3 +17,4 @@ export interface KeypairResults {
  * @param opts
  */
 export function keypair(opts?: KeypairOptions): KeypairResults;
+export default keypair;
