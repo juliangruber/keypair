@@ -12,7 +12,7 @@
     "test": "tape test.js"
   },
   "devDependencies": {
-    "tape": "~1.0.2"
+    "tape": "~4.6.2"
   },
   "keywords": [
     "rsa",
