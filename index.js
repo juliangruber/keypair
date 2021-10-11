@@ -756,7 +756,11 @@ util.createBuffer = function(input, encoding) {
  */
 
 var prng = forge.prng = {};
-var crypto = null;
+
+var crypto;
+try {
+  crypto = require('crypto');
+} catch (_) {}
 
 prng.create = function(plugin) {
   var ctx = {
@@ -1005,7 +1009,7 @@ prng.create = function(plugin) {
           // throw in more pseudo random
           next = seed >>> (i << 3);
           next ^= Math.floor(Math.random() * 0xFF);
-          b.putByte(String.fromCharCode(next & 0xFF));
+          b.putByte(next & 0xFF);
         }
       }
     }
