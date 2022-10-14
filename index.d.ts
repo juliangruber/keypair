@@ -3,18 +3,20 @@
 // Definitions by: eskelter <https://github.com/eskelter>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.2
-export interface KeypairOptions {
-    bits?: number;
-    e?: number;
-}
-export interface KeypairResults {
-    public: string;
-    private: string;
+declare namespace keypair {
+    export interface KeypairOptions {
+        bits?: number;
+        e?: number;
+    }
+    export interface KeypairResults {
+        public: string;
+        private: string;
+    }
 }
 
 /**
  * Get an RSA PEM key pair.
  * @param opts
  */
-export function keypair(opts?: KeypairOptions): KeypairResults;
-export default keypair;
+declare function keypair(opts?: keypair.KeypairOptions): keypair.KeypairResults;
+export = keypair;
